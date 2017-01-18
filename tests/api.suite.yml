@@ -1,0 +1,18 @@
+class_name: ApiTester
+modules:
+    enabled:
+      - Filesystem
+      - Yii2
+      - Db
+      - REST
+    config:
+      Db:
+          dsn: 'mysql:host=localhost;port=3306;dbname=testDB'
+          user: 'root'
+          password: ''
+          dump: 'tests/_data/dump.sql'
+          populate: true
+          cleanup: true
+      REST:
+          depends: PhpBrowser
+          url: /
