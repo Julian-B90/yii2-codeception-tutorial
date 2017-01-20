@@ -1,6 +1,8 @@
 <?php
 $I = new ApiTester($scenario);
-$I->wantTo('check user endpoint');
+$I->wantTo('Get all Users');
 
-$I->sendGET('/users');
+$I->sendGet('/users');
+$I->canSeeResponseCodeIs(\Codeception\Util\HttpCode::OK);
 $I->seeResponseIsJson();
+$I->seeResponseContainsJson(['username' => 'test']);

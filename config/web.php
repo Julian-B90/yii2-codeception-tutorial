@@ -43,10 +43,9 @@ $config = [
         'db' => require(__DIR__ . '/db.php'),
         'urlManager' => [
             'enablePrettyUrl' => true,
-            'enableStrictParsing' => true,
+            'enableStrictParsing' => false,
             'showScriptName' => false,
             'rules' => [
-                'site/index' => 'site/index',
                 [
                   'class' => 'yii\rest\UrlRule',
                   'controller' => 'user'
